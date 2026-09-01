@@ -1,0 +1,1694 @@
+O ChatGPT disse:
+Entendi 👍 O problema é que eu tinha mandado apenas uma parte para substituir, e isso pode acabar quebrando o código dependendo de onde foi colado.
+
+Vamos fazer do jeito mais fácil: vou te passar o site INTEIRO novamente, já corrigido. Você apaga o conteúdo antigo do Bloco de Notas e cola tudo de uma vez.
+
+A mensagem do WhatsApp agora vai pegar todos os dados preenchidos no formulário: Nome, RG, CPF, E-mail, telefone, endereço, CEP, data de nascimento, veículo etc.
+
+A imagem da sua logo precisa continuar na mesma pasta do index.html, com o nome WhatsApp Image 2026-08-05 at 10.34.46.jpeg.
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>R7 Automotivo | Centro Automotivo</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+
+/* ================= CABEÇALHO ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:85px;
+
+    background:rgba(0,0,0,0.97);
+
+    border-bottom:1px solid #252525;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    z-index:1000;
+}
+
+.logo img{
+    height:68px;
+    width:auto;
+    object-fit:contain;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:15px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ff0000;
+}
+
+.menu{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    min-height:100vh;
+
+    padding:140px 7% 80px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    radial-gradient(
+        circle at 80% 50%,
+        rgba(255,0,0,0.18),
+        transparent 35%
+    ),
+    linear-gradient(
+        120deg,
+        #000000,
+        #090909,
+        #000000
+    );
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.tag{
+
+    display:inline-block;
+
+    color:#ff0000;
+
+    border:1px solid #ff0000;
+
+    padding:9px 18px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    font-size:clamp(45px,7vw,82px);
+
+    line-height:1;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#ff0000;
+}
+
+.hero p{
+
+    color:#c7c7c7;
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    max-width:650px;
+
+    margin-bottom:35px;
+}
+
+.botoes{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:16px 28px;
+
+    background:#e60000;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:7px;
+
+    font-weight:bold;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+
+    background:#ff2929;
+
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+
+    background:transparent;
+
+    border:1px solid #555;
+}
+
+.btn-outline:hover{
+
+    border-color:#ff0000;
+
+    background:transparent;
+}
+
+
+/* ================= SEÇÕES ================= */
+
+section{
+    padding:90px 7%;
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.titulo small{
+
+    color:#ff0000;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+}
+
+.titulo h2{
+
+    font-size:42px;
+
+    margin-top:10px;
+
+    text-transform:uppercase;
+}
+
+.titulo p{
+
+    color:#999;
+
+    margin-top:12px;
+}
+
+
+/* ================= SERVIÇOS ================= */
+
+.servicos{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:22px;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+.card{
+
+    background:#101010;
+
+    border:1px solid #252525;
+
+    border-radius:12px;
+
+    padding:35px 28px;
+
+    transition:0.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#e60000;
+
+    box-shadow:
+    0 10px 35px
+    rgba(255,0,0,0.12);
+}
+
+.icone{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+}
+
+.card h3{
+
+    font-size:21px;
+
+    margin-bottom:12px;
+}
+
+.card p{
+
+    color:#999;
+
+    line-height:1.6;
+}
+
+
+/* ================= SOBRE ================= */
+
+.sobre{
+
+    background:#0b0b0b;
+}
+
+.sobre-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.sobre-text h3{
+
+    font-size:35px;
+
+    margin-bottom:20px;
+}
+
+.sobre-text h3 span{
+
+    color:#ff0000;
+}
+
+.sobre-text p{
+
+    color:#aaa;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+    margin-bottom:15px;
+}
+
+.destaques{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:15px;
+}
+
+.destaque{
+
+    background:#111;
+
+    border-left:3px solid #e60000;
+
+    padding:22px;
+}
+
+.destaque strong{
+
+    display:block;
+
+    font-size:25px;
+
+    margin-bottom:5px;
+}
+
+.destaque span{
+
+    color:#888;
+
+    font-size:14px;
+}
+
+
+/* ================= ORÇAMENTO ================= */
+
+.orcamento{
+
+    background:
+    radial-gradient(
+        circle at center,
+        #300000,
+        #000 55%
+    );
+}
+
+.orcamento-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:#101010;
+
+    border:1px solid #292929;
+
+    border-radius:15px;
+
+    padding:40px;
+}
+
+.aviso{
+
+    background:#190000;
+
+    border:1px solid #5c0000;
+
+    color:#ff7777;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    margin-bottom:30px;
+
+    text-align:center;
+
+    line-height:1.5;
+}
+
+
+/* ================= FORMULÁRIO ================= */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:18px;
+}
+
+.campo{
+
+    margin-bottom:18px;
+}
+
+.campo.full{
+
+    grid-column:
+    1 / -1;
+}
+
+.campo label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+    color:#eee;
+}
+
+.campo input,
+.campo select,
+.campo textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#050505;
+
+    border:1px solid #333;
+
+    border-radius:7px;
+
+    color:white;
+
+    outline:none;
+
+    font-size:15px;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus{
+
+    border-color:#e60000;
+}
+
+.campo textarea{
+
+    min-height:130px;
+
+    resize:vertical;
+}
+
+.enviar{
+
+    width:100%;
+
+    font-size:17px;
+
+    margin-top:10px;
+}
+
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:62px;
+
+    height:62px;
+
+    background:#25d366;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:30px;
+
+    text-decoration:none;
+
+    box-shadow:
+    0 5px 25px
+    rgba(37,211,102,0.35);
+
+    z-index:998;
+
+    transition:0.3s;
+}
+
+.whatsapp:hover{
+
+    transform:scale(1.1);
+}
+
+
+/* ================= CONTATO ================= */
+
+.contato{
+
+    text-align:center;
+
+    background:#e60000;
+}
+
+.contato h2{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+}
+
+.contato p{
+
+    font-size:18px;
+
+    margin-bottom:25px;
+}
+
+.contato .btn{
+
+    background:white;
+
+    color:#000;
+}
+
+.contato .btn:hover{
+
+    background:#eee;
+}
+
+
+/* ================= RODAPÉ ================= */
+
+footer{
+
+    background:#000;
+
+    border-top:1px solid #222;
+
+    padding:30px 7%;
+
+    text-align:center;
+
+    color:#777;
+
+    line-height:1.7;
+}
+
+footer strong{
+
+    color:white;
+}
+
+
+/* ================= CELULAR ================= */
+
+@media(max-width:850px){
+
+    header{
+
+        padding:0 5%;
+    }
+
+    nav{
+
+        display:none;
+
+        position:absolute;
+
+        top:85px;
+
+        left:0;
+
+        width:100%;
+
+        background:#080808;
+
+        flex-direction:column;
+
+        gap:0;
+    }
+
+    nav.ativo{
+
+        display:flex;
+    }
+
+    nav a{
+
+        padding:18px 25px;
+
+        border-bottom:
+        1px solid #222;
+    }
+
+    .menu{
+
+        display:block;
+    }
+
+    .servicos{
+
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+    .sobre-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    section{
+
+        padding:70px 5%;
+    }
+
+    .hero{
+
+        padding-left:5%;
+
+        padding-right:5%;
+    }
+
+    .hero h1{
+
+        font-size:45px;
+    }
+
+    .hero p{
+
+        font-size:16px;
+    }
+
+    .servicos{
+
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .campo.full{
+
+        grid-column:auto;
+    }
+
+    .orcamento-box{
+
+        padding:25px 18px;
+    }
+
+    .logo img{
+
+        height:58px;
+
+        max-width:190px;
+    }
+
+    .titulo h2{
+
+        font-size:31px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= CABEÇALHO ================= -->
+
+<header>
+
+    <a href="#inicio" class="logo">
+
+        <img
+        src="WhatsApp Image 2026-08-05 at 10.34.46.jpeg"
+        alt="R7 Automotivo">
+
+    </a>
+
+
+    <div
+    class="menu"
+    onclick="abrirMenu()">
+
+        ☰
+
+    </div>
+
+
+    <nav id="menu">
+
+        <a href="#inicio">
+            INÍCIO
+        </a>
+
+        <a href="#servicos">
+            SERVIÇOS
+        </a>
+
+        <a href="#sobre">
+            SOBRE
+        </a>
+
+        <a href="#orcamento">
+            ORÇAMENTO
+        </a>
+
+        <a href="#contato">
+            CONTATO
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= INÍCIO ================= -->
+
+<section
+class="hero"
+id="inicio">
+
+    <div class="hero-content">
+
+        <div class="tag">
+
+            CENTRO AUTOMOTIVO
+
+        </div>
+
+
+        <h1>
+
+            Seu carro em<br>
+
+            <span>
+                boas mãos.
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Na <strong>R7 Automotivo</strong>,
+            seu veículo recebe cuidado,
+            qualidade e transparência.
+
+            Trabalhamos para manter
+            seu carro sempre pronto
+            para a estrada.
+
+        </p>
+
+
+        <div class="botoes">
+
+            <a
+            href="#orcamento"
+            class="btn">
+
+                FAZER ORÇAMENTO
+
+            </a>
+
+
+            <a
+            href="https://wa.me/5515992564998"
+            target="_blank"
+            class="btn btn-outline">
+
+                FALAR NO WHATSAPP
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SERVIÇOS ================= -->
+
+<section id="servicos">
+
+    <div class="titulo">
+
+        <small>
+            O QUE FAZEMOS
+        </small>
+
+        <h2>
+            Nossos Serviços
+        </h2>
+
+        <p>
+            Manutenção e cuidados
+            para o seu veículo.
+        </p>
+
+    </div>
+
+
+    <div class="servicos">
+
+
+        <div class="card">
+
+            <div class="icone">
+                🔧
+            </div>
+
+            <h3>
+                Revisão Completa
+            </h3>
+
+            <p>
+                Revisão preventiva e
+                corretiva para manter
+                seu veículo funcionando
+                com segurança.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icone">
+                🛢️
+            </div>
+
+            <h3>
+                Troca de Óleo
+            </h3>
+
+            <p>
+                Troca de óleo e filtros
+                para preservar o motor
+                e aumentar sua vida útil.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icone">
+                🚗
+            </div>
+
+            <h3>
+                Freios
+            </h3>
+
+            <p>
+                Verificação e manutenção
+                de pastilhas, discos e
+                sistema de freios.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icone">
+                ⚡
+            </div>
+
+            <h3>
+                Diagnóstico Eletrônico
+            </h3>
+
+            <p>
+                Identificação de falhas
+                eletrônicas e diagnóstico
+                completo do veículo.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icone">
+                🔩
+            </div>
+
+            <h3>
+                Suspensão
+            </h3>
+
+            <p>
+                Manutenção de
+                amortecedores, molas e
+                componentes da suspensão.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icone">
+                ❄️
+            </div>
+
+            <h3>
+                Ar-Condicionado
+            </h3>
+
+            <p>
+                Manutenção e higienização
+                do sistema de
+                ar-condicionado.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SOBRE ================= -->
+
+<section
+class="sobre"
+id="sobre">
+
+    <div class="sobre-grid">
+
+
+        <div class="sobre-text">
+
+            <h3>
+
+                Por que escolher a
+
+                <span>
+                    R7 Automotivo?
+                </span>
+
+            </h3>
+
+
+            <p>
+
+                Somos um centro automotivo
+                focado em oferecer atendimento
+                de qualidade e serviços realizados
+                com responsabilidade.
+
+            </p>
+
+
+            <p>
+
+                Nosso objetivo é cuidar do seu
+                veículo com transparência e
+                deixar você seguro para
+                continuar sua jornada.
+
+            </p>
+
+
+            <a
+            href="#orcamento"
+            class="btn">
+
+                SOLICITAR ORÇAMENTO
+
+            </a>
+
+        </div>
+
+
+        <div class="destaques">
+
+
+            <div class="destaque">
+
+                <strong>
+                    R7
+                </strong>
+
+                <span>
+                    Centro Automotivo
+                </span>
+
+            </div>
+
+
+            <div class="destaque">
+
+                <strong>
+                    100%
+                </strong>
+
+                <span>
+                    Transparência
+                </span>
+
+            </div>
+
+
+            <div class="destaque">
+
+                <strong>
+                    ⚙️
+                </strong>
+
+                <span>
+                    Serviço especializado
+                </span>
+
+            </div>
+
+
+            <div class="destaque">
+
+                <strong>
+                    🤝
+                </strong>
+
+                <span>
+                    Confiança
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ORÇAMENTO ================= -->
+
+<section
+class="orcamento"
+id="orcamento">
+
+
+    <div class="titulo">
+
+        <small>
+            ATENDIMENTO ONLINE
+        </small>
+
+        <h2>
+            Faça seu orçamento
+        </h2>
+
+        <p>
+
+            Preencha os dados abaixo.
+            Ao enviar, o WhatsApp será
+            aberto com a mensagem pronta.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="orcamento-box">
+
+
+        <div class="aviso">
+
+            📱 Preencha seus dados.
+            Depois clique em
+            <strong>
+                ENVIAR PELO WHATSAPP
+            </strong>.
+
+        </div>
+
+
+
+        <form id="formulario">
+
+
+            <div class="form-grid">
+
+
+                <!-- NOME -->
+
+                <div class="campo">
+
+                    <label>
+                        Nome completo
+                    </label>
+
+                    <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome completo"
+                    required>
+
+                </div>
+
+
+
+                <!-- RG -->
+
+                <div class="campo">
+
+                    <label>
+                        RG
+                    </label>
+
+                    <input
+                    type="text"
+                    id="rg"
+                    placeholder="Digite seu RG">
+
+                </div>
+
+
+
+                <!-- CPF -->
+
+                <div class="campo">
+
+                    <label>
+                        CPF
+                    </label>
+
+                    <input
+                    type="text"
+                    id="cpf"
+                    placeholder="000.000.000-00">
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="campo">
+
+                    <label>
+                        E-mail
+                    </label>
+
+                    <input
+                    type="email"
+                    id="email"
+                    placeholder="seuemail@email.com">
+
+                </div>
+
+
+
+                <!-- TELEFONE -->
+
+                <div class="campo">
+
+                    <label>
+                        Número de telefone
+                    </label>
+
+                    <input
+                    type="tel"
+                    id="telefone"
+                    placeholder="(15) 99999-9999"
+                    required>
+
+                </div>
+
+
+
+                <!-- DATA NASCIMENTO -->
+
+                <div class="campo">
+
+                    <label>
+                        Data de nascimento
+                    </label>
+
+                    <input
+                    type="date"
+                    id="nascimento">
+
+                </div>
+
+
+
+                <!-- ENDEREÇO -->
+
+                <div class="campo full">
+
+                    <label>
+                        Endereço completo
+                    </label>
+
+                    <input
+                    type="text"
+                    id="endereco"
+                    placeholder="Rua, número, bairro, cidade">
+
+                </div>
+
+
+
+                <!-- CEP -->
+
+                <div class="campo">
+
+                    <label>
+                        CEP
+                    </label>
+
+                    <input
+                    type="text"
+                    id="cep"
+                    placeholder="00000-000">
+
+                </div>
+
+
+
+                <!-- VEÍCULO -->
+
+                <div class="campo">
+
+                    <label>
+                        Veículo
+                    </label>
+
+                    <input
+                    type="text"
+                    id="veiculo"
+                    placeholder="Ex: Honda Civic">
+
+                </div>
+
+
+
+                <!-- ANO -->
+
+                <div class="campo">
+
+                    <label>
+                        Ano do veículo
+                    </label>
+
+                    <input
+                    type="text"
+                    id="ano"
+                    placeholder="Ex: 2020">
+
+                </div>
+
+
+
+                <!-- SERVIÇO -->
+
+                <div class="campo">
+
+                    <label>
+                        Serviço desejado
+                    </label>
+
+                    <select
+                    id="servico"
+                    required>
+
+                        <option value="">
+                            Selecione o serviço
+                        </option>
+
+                        <option>
+                            Revisão
+                        </option>
+
+                        <option>
+                            Troca de óleo
+                        </option>
+
+                        <option>
+                            Freios
+                        </option>
+
+                        <option>
+                            Diagnóstico eletrônico
+                        </option>
+
+                        <option>
+                            Suspensão
+                        </option>
+
+                        <option>
+                            Ar-condicionado
+                        </option>
+
+                        <option>
+                            Outro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DESCRIÇÃO -->
+
+                <div class="campo full">
+
+                    <label>
+                        Descreva o que precisa
+                    </label>
+
+                    <textarea
+                    id="descricao"
+                    placeholder="Descreva o problema ou serviço que deseja realizar..."></textarea>
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+            type="submit"
+            class="btn enviar">
+
+                📱 ENVIAR ORÇAMENTO PELO WHATSAPP
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTATO ================= -->
+
+<section
+class="contato"
+id="contato">
+
+    <h2>
+
+        Fale com a
+        R7 Automotivo
+
+    </h2>
+
+
+    <p>
+
+        Tire suas dúvidas ou
+        solicite seu orçamento
+        pelo WhatsApp.
+
+    </p>
+
+
+    <a
+    href="https://wa.me/5515992564998"
+    target="_blank"
+    class="btn">
+
+        📱 (15) 99256-4998
+
+    </a>
+
+</section>
+
+
+
+<!-- ================= BOTÃO WHATSAPP ================= -->
+
+<a
+href="https://wa.me/5515992564998"
+target="_blank"
+class="whatsapp"
+title="Falar pelo WhatsApp">
+
+    ☎
+
+</a>
+
+
+
+<!-- ================= RODAPÉ ================= -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            R7 AUTOMOTIVO
+        </strong>
+
+        — Centro Automotivo
+
+    </p>
+
+    <p>
+
+        Qualidade • Confiança • Transparência
+
+    </p>
+
+    <p>
+
+        © 2026 R7 Automotivo
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* ================= MENU ================= */
+
+function abrirMenu(){
+
+    const menu =
+        document.getElementById("menu");
+
+    menu.classList.toggle("ativo");
+
+}
+
+
+/* ================= FECHAR MENU ================= */
+
+document
+.querySelectorAll("nav a")
+.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            document
+            .getElementById("menu")
+            .classList
+            .remove("ativo");
+
+        }
+    );
+
+});
+
+
+
+/* ================= WHATSAPP ================= */
+
+document
+.getElementById("formulario")
+.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        /* PEGAR DADOS DO FORMULÁRIO */
+
+        const nome =
+            document.getElementById("nome").value;
+
+        const rg =
+            document.getElementById("rg").value;
+
+        const cpf =
+            document.getElementById("cpf").value;
+
+        const email =
+            document.getElementById("email").value;
+
+        const telefone =
+            document.getElementById("telefone").value;
+
+        const nascimento =
+            document.getElementById("nascimento").value;
+
+        const endereco =
+            document.getElementById("endereco").value;
+
+        const cep =
+            document.getElementById("cep").value;
+
+        const veiculo =
+            document.getElementById("veiculo").value;
+
+        const ano =
+            document.getElementById("ano").value;
+
+        const servico =
+            document.getElementById("servico").value;
+
+        const descricao =
+            document.getElementById("descricao").value;
+
+
+
+        /* MENSAGEM QUE VAI PARA O WHATSAPP */
+
+        const mensagem =
+
+`Olá! Gostaria de solicitar um orçamento na R7 Automotivo.
+
+━━━━━━━━━━━━━━━━━━━━
+DADOS DO CLIENTE
+━━━━━━━━━━━━━━━━━━━━
+
+Nome completo: ${nome}
+
+RG: ${rg}
+
+CPF: ${cpf}
+
+E-mail: ${email}
+
+Número de telefone: ${telefone}
+
+Endereço completo: ${endereco}
+
+CEP: ${cep}
+
+Data de nascimento: ${nascimento}
+
+
+━━━━━━━━━━━━━━━━━━━━
+DADOS DO VEÍCULO
+━━━━━━━━━━━━━━━━━━━━
+
+Veículo: ${veiculo}
+
+Ano: ${ano}
+
+Serviço desejado: ${servico}
+
+Descrição:
+${descricao}
+
+
+Aguardo o retorno da R7 Automotivo.
+Obrigado!`;
+
+
+
+        /* NÚMERO DA R7 */
+
+        const numero =
+            "5515992564998";
+
+
+        /* CRIAR LINK DO WHATSAPP */
+
+        const url =
+            "https://wa.me/" +
+            numero +
+            "?text=" +
+            encodeURIComponent(mensagem);
+
+
+        /* ABRIR WHATSAPP */
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
